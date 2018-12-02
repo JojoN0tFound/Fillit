@@ -6,7 +6,7 @@
 #    By: mmousson <mmousson@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/07 00:53:31 by mmousson          #+#    #+#              #
-#    Updated: 2018/11/15 17:28:51 by jquivogn         ###   ########.fr        #
+#    Updated: 2018/11/17 10:33:04 by mmousson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC =	ft_memset.c \
 		ft_lstnew.c \
 		ft_memdel.c \
 		ft_bzero.c \
-		ft_memcpy.c
+		ft_memcpy.c \
+		ft_strlen.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jquivogn <jquivogn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmousson <mmousson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 06:34:34 by mmousson          #+#    #+#             */
-/*   Updated: 2018/11/15 17:21:56 by jquivogn         ###   ########.fr       */
+/*   Updated: 2018/11/17 11:15:27 by mmousson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "fillit.h"
 #include <stdio.h>
+
+static void		ft_initiate(t_list **list, char *letter)
+{
+	*list = NULL;
+	*letter = 'A';
+}
 
 static void		ft_put_vector(t_tetris *new, int x, int y, int piece)
 {
@@ -81,7 +87,7 @@ t_list			*ft_get_tetriminos(int fd)
 	t_tetris	*new;
 	int			ret;
 
-	letter = 'A';
+	ft_initiate(&list, &letter);
 	while ((ret = read(fd, buf, 21)) >= 20)
 	{
 		if (ret == 21 && (buf[20] != '\n' && buf[20] != EOF))

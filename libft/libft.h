@@ -6,7 +6,7 @@
 /*   By: mmousson <mmousson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 02:11:28 by mmousson          #+#    #+#             */
-/*   Updated: 2018/11/13 02:32:31 by mmousson         ###   ########.fr       */
+/*   Updated: 2018/11/17 13:42:10 by jquivogn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-
-# define E 2.7182818284590451
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-# define LLONG_MAX  9223372036854775807LL
-# define LLONG_MIN -9223372036854775807LL
-# define FLOAT_MIN 0.000000f
-# define FLOAT_MAX 340282346638528859811704183484516925440.000000f
 
 void				ft_putchar(int c);
 void				ft_putstr(char const *s);

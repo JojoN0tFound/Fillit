@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jquivogn <jquivogn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmousson <mmousson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 01:12:37 by mmousson          #+#    #+#             */
-/*   Updated: 2018/11/15 17:24:21 by jquivogn         ###   ########.fr       */
+/*   Updated: 2018/11/17 10:37:50 by mmousson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,8 @@ static void		ft_loop(char **grid, t_list *tetris)
 
 int				ft_solve(t_list *tetriminos)
 {
-	int		min;
 	char	**grid;
 
-	min = 104;
 	grid = NULL;
 	if (ft_initialize_grid(&grid))
 	{

@@ -3,32 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   grid_management.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jquivogn <jquivogn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmousson <mmousson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 02:50:44 by mmousson          #+#    #+#             */
-/*   Updated: 2018/11/15 17:11:07 by jquivogn         ###   ########.fr       */
+/*   Updated: 2018/11/17 11:02:56 by mmousson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft/libft.h"
 #include "fillit.h"
-
-static int	ft_find_neighbours(char **grid, short x, short y, char except)
-{
-	if (x - 1 > 0)
-		if ((grid[x - 1][y] != except && ft_isalpha(grid[x - 1][y])))
-			return (1);
-	if (x + 1 < 104)
-		if ((grid[x + 1][y] != except && ft_isalpha(grid[x + 1][y])))
-			return (1);
-	if (y - 1 > 0)
-		if ((grid[x][y - 1] != except && ft_isalpha(grid[x][y - 1])))
-			return (1);
-	if (y + 1 < 104)
-		if ((grid[x][y + 1] != except && ft_isalpha(grid[x][y + 1])))
-			return (1);
-	return (0);
-}
 
 int			ft_initialize_grid(char ***grid)
 {
@@ -52,17 +35,19 @@ int			ft_is_valid_pos(char **grid, t_vector *xy, t_tetris *tr, int max)
 	int		i;
 	int		bx;
 	int		by;
-	short	neighbours;
 
+	if (!xy)
+		return (0);
 	i = -1;
 	bx = xy->x;
 	by = xy->y;
-	neighbours = 0;
 	while (++i < 4)
 	{
 		if (bx < 0 || by < 0 || bx > max || by > max || grid[bx][by] != 0)
+		{
+			free(xy);
 			return (0);
-		neighbours += ft_find_neighbours(grid, by, bx, tr->value);
+		}
 		bx += i < 3 ? tr->points[i].x : 0;
 		by += i < 3 ? tr->points[i].y : 0;
 	}
